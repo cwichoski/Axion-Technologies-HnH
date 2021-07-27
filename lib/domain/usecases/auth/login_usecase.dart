@@ -9,18 +9,18 @@ import 'package:logging/logging.dart';
 class LoginUseCase extends CompletableUseCase<LoginUseCaseParams> {
   // Members
   AuthenticationRepository _authenticationRepository;
-  Logger _logger;
+  late Logger _logger;
   // Constructors
   LoginUseCase(this._authenticationRepository) : super() {
     _logger = Logger('LoginUseCase');
   }
 
   @override
-  Future<Stream<User>> buildUseCaseStream(LoginUseCaseParams params) async {
+  Future<Stream<User>> buildUseCaseStream(LoginUseCaseParams? params) async {
     final StreamController<User> controller = StreamController();
     try {
       await _authenticationRepository.authenticate(
-          email: params._email, password: params._password);
+          email: params!._email, password: params._password);
       controller.close();
     } catch (e) {
       _logger.shout('Could not login the user.', e);

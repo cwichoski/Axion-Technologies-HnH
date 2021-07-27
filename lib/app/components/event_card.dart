@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:hnh/app/utils/constants.dart';
 import 'package:hnh/domain/entities/event.dart';
 import 'package:hnh/domain/entities/user.dart';
 
 class EventCard extends StatelessWidget {
   final Event _event;
   final User _user;
-  final bool
+  final bool?
       isUserEvent; // indicates whether the event card is being used for user events for styling purposes
 
   EventCard(this._event, this._user, [this.isUserEvent]);

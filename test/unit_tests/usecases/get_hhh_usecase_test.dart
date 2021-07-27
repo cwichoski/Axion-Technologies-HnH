@@ -45,12 +45,12 @@ void initLogger() {
 
 /// Observer to execute [UseCase] with
 class _Observer implements Observer<GetHHHUseCaseResponse> {
-
   bool done = false;
   void onNext(response) {
     expect(response, TypeMatcher<GetHHHUseCaseResponse>());
     expect((response as GetHHHUseCaseResponse).hhh, TypeMatcher<HHH>());
-    expect((response as GetHHHUseCaseResponse).sponsors, TypeMatcher<List<Sponsor>>());
+    expect((response as GetHHHUseCaseResponse).sponsors,
+        TypeMatcher<List<Sponsor>>());
     done = true;
   }
 
@@ -66,7 +66,7 @@ class _Observer implements Observer<GetHHHUseCaseResponse> {
 
 /// Mocks [HHHRepository]
 class MockHHHRepo extends Mock implements HHHRepository {
-  HHH testHHH;
+  late HHH testHHH;
 
   MockHHHRepo() {
     testHHH = HHH(
@@ -84,12 +84,14 @@ class MockHHHRepo extends Mock implements HHHRepository {
 
 /// Mocks [SponsorRepository]
 class MockSponsorRepo extends Mock implements SponsorRepository {
-  Sponsor testSponsor;
+  late Sponsor testSponsor;
 
   MockSponsorRepo() {
-    testSponsor = Sponsor("lorem Ipsum", 'www.lorem-ipsum.com', 'https://lorem-ipsum.com/image', '2019');
+    testSponsor = Sponsor("lorem Ipsum", 'www.lorem-ipsum.com',
+        'https://lorem-ipsum.com/image', '2019');
   }
 
-  Future<List<Sponsor>> getSponsors({String year}) async => [testSponsor, testSponsor, testSponsor];
+  Future<List<Sponsor>> getSponsors({String? year}) async =>
+      [testSponsor, testSponsor, testSponsor];
   Future<List<Sponsor>> getCurrentSponsors() => getSponsors();
 }

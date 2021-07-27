@@ -2,14 +2,16 @@ import 'package:hnh/domain/entities/user.dart';
 import 'package:hnh/domain/usecases/auth/logout_usecase.dart';
 import 'package:hnh/domain/usecases/get_current_user_usecase.dart';
 import 'package:flutter_clean_architecture/flutter_clean_architecture.dart';
-class HHDrawerPresenter extends Presenter {
-  Function logoutOnComplete;
-  
-  Function getUserOnNext;
-  Function getUserOnError;
 
-  LogoutUseCase _logoutUseCase;
-  GetCurrentUserUseCase _getCurrentUserUseCase;
+class HHDrawerPresenter extends Presenter {
+  late Function logoutOnComplete;
+
+  late Function getUserOnNext;
+  late Function getUserOnError;
+
+  late LogoutUseCase _logoutUseCase;
+  late GetCurrentUserUseCase _getCurrentUserUseCase;
+
   HHDrawerPresenter(authenticationRepository) {
     _logoutUseCase = LogoutUseCase(authenticationRepository);
     _getCurrentUserUseCase = GetCurrentUserUseCase(authenticationRepository);
@@ -18,7 +20,8 @@ class HHDrawerPresenter extends Presenter {
   /// Disposes of the [_logoutUseCase] and unsubscribes
   void dispose() => _logoutUseCase.dispose();
   void logout() => _logoutUseCase.execute(_LogoutUserCaseObserver(this));
-  void getUser() => _getCurrentUserUseCase.execute(_GetUserUseCaseObserver(this));
+  void getUser() =>
+      _getCurrentUserUseCase.execute(_GetUserUseCaseObserver(this));
 }
 
 /// The [Observer] used to observe the `Observable` of the [LogoutUseCase]
@@ -26,11 +29,12 @@ class _LogoutUserCaseObserver implements Observer<void> {
   HHDrawerPresenter _drawerPresenter;
   _LogoutUserCaseObserver(this._drawerPresenter);
 
-  void onNext(_){}
-  void onComplete()  { 
+  void onNext(_) {}
+  void onComplete() {
     _drawerPresenter.logoutOnComplete();
     _drawerPresenter.dispose();
   }
+
   void onError(_) {}
 }
 
@@ -50,8 +54,6 @@ class _GetUserUseCaseObserver implements Observer<User> {
 
   void onError(e) {
     // any cleaning or preparation goes here
-    assert(_drawerPresenter.getUserOnError != null);
     _drawerPresenter.getUserOnError(e);
-    
   }
 }

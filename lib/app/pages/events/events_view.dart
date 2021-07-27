@@ -5,7 +5,7 @@ import 'package:hnh/app/pages/events/events_controller.dart';
 import 'package:hnh/app/utils/constants.dart';
 import 'package:hnh/data/repositories/data_authentication_repository.dart';
 import 'package:hnh/data/repositories/data_event_repository.dart';
-import 'package:modal_progress_hud/modal_progress_hud.dart';
+import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 
 class EventsPage extends View {
   EventsPage({Key key, this.title}) : super(key: key);

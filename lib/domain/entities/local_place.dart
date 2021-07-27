@@ -4,45 +4,45 @@ import 'package:hnh/domain/entities/coordinates.dart';
 /// A local place, namely either a restaurant or a hotel as defined in [LocalPlaceType].
 /// Used to indicate a restaurant of a hotel in town.
 class LocalPlace {
-
   /// Name of the local place
-  String _name;
+  String _name = '';
 
   /// Address of the local place
-  String _address;
+  String _address = '';
 
   /// Location of the local place
-  Coordinates _coordinates;
+  late Coordinates _coordinates;
 
   /// Type of the local place, either a [LocalPlaceType.restaurant] or [LocalPlaceType.hotel]
-  LocalPlaceType _type;
+  LocalPlaceType _type = LocalPlaceType.hotel;
 
   /// The average user rarting of the local place
-  double _rating;
+  double _rating = 0.0;
 
   /// The default icon, usually either a restaurant icon or a hotel icon
-  String _icon;
+  String _icon = '';
 
   /// Link the local place's image
-  String photo; // can be set later
+  String photo = ''; // can be set later
 
   /// Indicates whether the local place is currently open. This is not always accurate
   /// depending on the information retrieved from Google
-  bool _isOpen;
+  bool _isOpen = false;
 
   /// Reference to the photo used to retrieve the link to the photo. This is not useful
   /// to the user.
-  String _photoReference;
+  String _photoReference = '';
 
-  /// Google Maps link to the local place. This can be used to open Google maps with a local place query. 
-  String _navigationLink;
+  /// Google Maps link to the local place. This can be used to open Google maps with a local place query.
+  String _navigationLink = '';
 
   /// Getters
   String get name => _name;
   String get address => _address;
   Coordinates get coordinates => _coordinates;
   LocalPlaceType get type => _type;
-  String get typeString => _type == LocalPlaceType.restaurant ? 'restaurant' : 'hotel';
+  String get typeString =>
+      _type == LocalPlaceType.restaurant ? 'restaurant' : 'hotel';
   double get rating => _rating;
   String get icon => _icon;
   bool get isOpen => _isOpen;

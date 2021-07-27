@@ -21,33 +21,33 @@ class Event {
   final String id;
 
   /// The route of the event. Empty if not a race.
-  final List<Coordinates> route;
+  final List<Coordinates>? route;
 
   /// The rest stops of the event. Empty if not a race.
-  final List<Coordinates> stops;
+  final List<Coordinates>? stops;
 
   /// The link to the image of the event.
-  final String imageUrl;
+  final String? imageUrl;
 
   /// Whether the event should be a part of the `featured` events.
-  final bool isFeatured;
+  final bool? isFeatured;
 
   /// [Coordinates] of the `Hell's Gate` rest stop.
-  Coordinates get hellsGate => stops != null ? stops[0] : Coordinates('', '');
+  Coordinates get hellsGate => stops != null ? stops![0] : Coordinates('', '');
 
   /// [Coordinates] of the finish line.
-  Coordinates get finishLine => stops != null ? stops[1] : Coordinates('', '');
+  Coordinates get finishLine => stops != null ? stops![1] : Coordinates('', '');
 
   /// [Coordinates] of the medical rest stop.
-  Coordinates get medicalStop => stops != null ? stops[2] : Coordinates('', '');
+  Coordinates get medicalStop =>
+      stops != null ? stops![2] : Coordinates('', '');
 
   /// Event time in Unix-time stamp in `milliseconds`
   DateTime get eventTime =>
       DateTime.fromMillisecondsSinceEpoch(int.parse(location.timestamp) * 1000);
 
   /// Whether the [Event] is a race.
-  bool get isRace => route.length > 0;
-
+  bool get isRace => route!.length > 0;
 
   // Default
   Event(this.name, this.description, this.location, this.id,
@@ -59,7 +59,7 @@ class Event {
         description = event.description,
         location = Location.fromLocation(event.location),
         id = event.id,
-        route = List<Coordinates>()..addAll(event.route),
+        route = []..addAll(event.route!),
         imageUrl = event.imageUrl,
         isFeatured = event.isFeatured,
         stops = event.stops;
@@ -102,13 +102,13 @@ class Event {
         'location': jsonEncode(location),
         'id': id,
         'route': jsonEncode(route),
-        'imageUrl': imageUrl,
+        'imageUrl': imageUrl!,
         'isFeatured': jsonEncode(isFeatured),
         'stops': jsonEncode(stops),
       };
 
   /// Append [coordinates] to the [route]
   void appendRoute(List<Coordinates> coordinates) {
-    route.addAll(coordinates);
+    route!.addAll(coordinates);
   }
 }

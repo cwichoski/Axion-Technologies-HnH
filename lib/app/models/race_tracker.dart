@@ -11,7 +11,7 @@ class RaceTracker extends Event {
   int lastVisitedPoint;
   double _totalDistance;
   double _distanceTravelled;
-  Coordinates _lastKnownPosition;
+  Coordinates _lastKnownPosition = new Coordinates("0", "0");
 
   // Getters
   double get distanceTravelled => _distanceTravelled;
@@ -48,8 +48,8 @@ class RaceTracker extends Event {
     }
 
     _totalDistance = 0;
-    for (int i = 0; i < route.length - 2; i++) {
-      _totalDistance += route[i].distanceTo(route[i + 1], unit);
+    for (int i = 0; i < route!.length - 2; i++) {
+      _totalDistance += route![i].distanceTo(route![i + 1], unit);
     }
     return _totalDistance;
   }
@@ -66,8 +66,8 @@ class RaceTracker extends Event {
 
     double remainingDistance = 0;
     // Find the remaining distance starting from the current calculated index
-    for (int i = lastVisitedPoint; i < route.length - 2; i++) {
-      remainingDistance += route[i].distanceTo(route[i + 1], unit);
+    for (int i = lastVisitedPoint; i < route!.length - 2; i++) {
+      remainingDistance += route![i].distanceTo(route![i + 1], unit);
     }
 
     return remainingDistance;
@@ -79,11 +79,11 @@ class RaceTracker extends Event {
   int _findClosest(Coordinates currentPosition, DistanceUnit unit) {
     int closestIdx = 0;
     double closestDistance =
-        currentPosition.distanceTo(route[closestIdx], unit);
+        currentPosition.distanceTo(route![closestIdx], unit);
 
     /// `O(n - 1)` loop to find the shortest distance
-    for (int i = 1; i < route.length - 1; i++) {
-      double distance = currentPosition.distanceTo(route[i], unit);
+    for (int i = 1; i < route!.length - 1; i++) {
+      double distance = currentPosition.distanceTo(route![i], unit);
       if (distance < closestDistance) {
         closestDistance = distance;
         closestIdx = i;
@@ -112,10 +112,11 @@ class RaceTracker extends Event {
     // approximation of the distance between the closest point to HG in the route and
     // the real position of HG. This is necessary for the routes that actually do not
     // include HG along their routes
-    double distanceFromClosestToHG = route[hgIndex].distanceTo(hellsGate, unit);
+    double distanceFromClosestToHG =
+        route![hgIndex].distanceTo(hellsGate, unit);
     // Find the remaining distance starting from the current calculated index
     for (int i = start; i < hgIndex - 1; i++) {
-      remainingDistance += route[i].distanceTo(route[i + 1], unit);
+      remainingDistance += route![i].distanceTo(route![i + 1], unit);
     }
 
     // remaining distance + approx distance to HG - the distance already covered after passed the last visited point
@@ -139,12 +140,12 @@ class RaceTracker extends Event {
     _distanceTravelled += currentPosition.distanceTo(_lastKnownPosition, unit);
 
     // if already reached finish line
-    if (lastVisitedPoint == route.length - 1) {
+    if (lastVisitedPoint == route!.length - 1) {
       return 0;
     }
 
     double distanceToNext =
-        currentPosition.distanceTo(route[lastVisitedPoint + 1], unit);
+        currentPosition.distanceTo(route![lastVisitedPoint + 1], unit);
     // if within 16 meters, visit point
     if (distanceToNext <= 0.01) {
       lastVisitedPoint++;

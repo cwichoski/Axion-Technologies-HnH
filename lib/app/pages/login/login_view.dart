@@ -5,7 +5,7 @@ import 'package:hnh/app/components/inputField.dart';
 import 'package:hnh/app/pages/login/login_controller.dart';
 import 'package:hnh/app/utils/constants.dart';
 import 'package:hnh/data/repositories/data_authentication_repository.dart';
-import 'package:modal_progress_hud/modal_progress_hud.dart';
+import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 
 class LoginPage extends View {
   LoginPage({Key key, this.title}) : super(key: key);

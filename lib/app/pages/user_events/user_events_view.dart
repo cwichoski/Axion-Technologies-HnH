@@ -6,7 +6,7 @@ import 'package:hnh/app/pages/user_events/user_events_controller.dart';
 import 'package:hnh/app/utils/constants.dart';
 import 'package:hnh/data/repositories/data_event_repository.dart';
 import 'package:hnh/domain/entities/user.dart';
-import 'package:modal_progress_hud/modal_progress_hud.dart';
+import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 
 class UserEventsPage extends View {
   UserEventsPage(routeObserver, {Key key, this.user})

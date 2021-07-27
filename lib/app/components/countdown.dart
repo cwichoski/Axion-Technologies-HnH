@@ -13,8 +13,8 @@ class Countdown extends StatefulWidget {
 class CountdownState extends State<Countdown> {
   // Members
   DateTime _eventTime;
-  Duration _timeDifference;
-  Timer _timer;
+  late Duration _timeDifference;
+  late Timer _timer;
 
   // Properties
   int get days => _timeDifference.inDays;
@@ -24,7 +24,7 @@ class CountdownState extends State<Countdown> {
 
   CountdownState(this._eventTime) {
     _timer = Timer.periodic(Duration(seconds: 1), _updateTime);
-    _timeDifference = _timeDifference = timeDifference();
+    _timeDifference = timeDifference();
   }
 
   /// Calculates the time difference between the current time and the [_eventTime]
@@ -69,7 +69,7 @@ class CountdownState extends State<Countdown> {
     );
   }
 
-    Expanded getExpanded(String title, String content, int flex) {
+  Expanded getExpanded(String title, String content, int flex) {
     return Expanded(
       flex: flex,
       child: Padding(
@@ -121,6 +121,7 @@ class CountdownState extends State<Countdown> {
       ),
     );
   }
+
   @override
   void dispose() {
     _timer.cancel();

@@ -6,7 +6,7 @@ import 'package:hnh/app/pages/local_places/local_places_tabs.dart';
 import 'package:hnh/app/utils/constants.dart';
 import 'package:hnh/data/repositories/data_local_places_repository.dart';
 import 'package:hnh/device/repositories/device_location_repository.dart';
-import 'package:modal_progress_hud/modal_progress_hud.dart';
+import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 
 class LocalPlacesPage extends View {
   LocalPlacesPage({Key key}) : super(key: key);

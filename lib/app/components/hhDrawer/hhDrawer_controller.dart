@@ -6,15 +6,16 @@ import 'package:package_info/package_info.dart';
 
 class HHDrawerController extends Controller {
   HHDrawerPresenter _drawerPresenter;
-  User _currentUser;
-  PackageInfo _info;
+  late User _currentUser;
+  late PackageInfo _info;
 
   User get user => _currentUser;
   String get info => '${_info.appName} v${_info.version} ${_info.buildNumber}';
 
   HHDrawerController(authRepository)
       : _drawerPresenter = HHDrawerPresenter(authRepository) {
-    _info = PackageInfo(appName: '', version: '');
+    _info =
+        PackageInfo(appName: '', version: '', packageName: '', buildNumber: '');
     initListeners();
     retrieveData();
   }
@@ -45,6 +46,7 @@ class HHDrawerController extends Controller {
 
   void logout() => _drawerPresenter.logout();
 
+  // ignore: invalid_override_of_non_virtual_member
   void dispose() {
     _drawerPresenter.dispose();
     super.dispose();
