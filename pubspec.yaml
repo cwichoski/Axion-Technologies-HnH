@@ -10,7 +10,7 @@ description: Hotter'n Hell Hundred event app.
 version: 1.0.0+3
 
 environment:
-  sdk: ">=2.0.0-dev.68.0 <3.0.0"
+  sdk: ">=2.12.0 <3.0.0"
 
 dependencies:
   flutter:
@@ -18,35 +18,33 @@ dependencies:
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
-  cupertino_icons: ^0.1.2
-  rxdart: ^0.23.0
-  mockito: ^4.0.0
-  flutter_clean_architecture: ^3.0.1
+  cupertino_icons: ^1.0.3
+  rxdart: ^0.26.0
+  mockito: ^5.0.12
+  flutter_clean_architecture: ^5.0.0
 
   # user location
-  location: ^2.3.5
+  location: ^4.3.0
   
-  http: ^0.12.0+1
-  shared_preferences: ^0.5.0
-  logging: ^0.11.3+2
-  uuid: ^2.0.0
+  http: ^0.13.3
+  shared_preferences: ^2.0.6
+  logging: ^1.0.1
+  uuid: ^3.0.4
   # UI
-  modal_progress_hud: ^0.1.2
+  modal_progress_hud_nsn: ^0.1.0-nullsafety-1
 
-  google_maps_flutter: ^0.5.6
-  url_launcher: ^5.0.2
+  google_maps_flutter: ^2.0.6
+  url_launcher: ^6.0.9
   # Do not change this version to anything newer for now due to AndroidX dependency issues
-  webview_flutter: '0.3.3'
-  package_info: ^0.4.0+3
+  webview_flutter: ^2.0.10
+  package_info: ^2.0.2
 
   
 dev_dependencies:
-  flutter_test:
-    sdk: flutter
-  test: ^1.5.1
+  test: ^1.17.10
 
   # For creation of the Launcher Icons
-  flutter_launcher_icons: ^0.7.0
+  flutter_launcher_icons: ^0.9.0
   
 flutter_icons:
   image_path_android: "assets/img/icon.png"
