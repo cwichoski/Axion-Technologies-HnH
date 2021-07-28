@@ -4,11 +4,11 @@ import 'package:flutter_clean_architecture/flutter_clean_architecture.dart';
 
 class LocalPlacesPresenter extends Presenter {
 
-  Function getLocalPlacesOnNext;
-  Function getLocalPlacesOnComplete;
-  Function getLocalPlacesOnError;
+  late Function getLocalPlacesOnNext;
+  late Function getLocalPlacesOnComplete;
+  late Function getLocalPlacesOnError;
 
-  GetLocalPlacesUseCase _getLocalPlacesUseCase;
+  late GetLocalPlacesUseCase _getLocalPlacesUseCase;
 
   LocalPlacesPresenter(localPlacesRepo, locationRepo) {
     _getLocalPlacesUseCase = GetLocalPlacesUseCase(localPlacesRepo, locationRepo);

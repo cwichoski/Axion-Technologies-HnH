@@ -10,8 +10,8 @@ class DataSponsorRepository implements SponsorRepository {
 
   // singleton
   static final DataSponsorRepository _instance = DataSponsorRepository._internal();
-  Logger _logger;
-  List<Sponsor> _currentSponsors;
+  late Logger _logger;
+  late List<Sponsor> _currentSponsors;
 
   DataSponsorRepository._internal() {
     _logger =Logger('DataSponsorRepository');

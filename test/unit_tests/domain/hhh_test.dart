@@ -6,9 +6,9 @@ import 'dart:convert';
 
 void main() {
   group('Entity Test: HHH', () {
-    Map<String, dynamic> hhhMap;
-    Map<String, String> hhhJson;
-    HHH testHHH;
+    late Map<String, dynamic> hhhMap;
+    late Map<String, String> hhhJson;
+    late HHH testHHH;
 
     setUp(() {
       hhhMap = {

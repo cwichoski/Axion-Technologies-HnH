@@ -8,17 +8,17 @@ import 'package:logging/logging.dart';
 
 class SponsorsController extends Controller {
   SponsorsPresenter _sponsorsPresenter;
-  User _currentUser;
-  HHH _currentHHH;
-  bool isLoading;
-  List<Sponsor> _sponsors;
+  late User _currentUser;
+  late HHH _currentHHH;
+  late bool isLoading;
+  late List<Sponsor> _sponsors;
 
   DateTime get eventTime => _currentHHH?.eventTime;
   User get currentUser => _currentUser;
   List<Sponsor> get sponsors => _sponsors;
-  Logger logger;
-  bool userRetrieved;
-  bool hhhRetrieved;
+  late Logger logger;
+  late bool userRetrieved;
+  late bool hhhRetrieved;
 
   SponsorsController(hhhRepository, sponsorRepository, authRepository)
       : _sponsorsPresenter = SponsorsPresenter(

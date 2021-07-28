@@ -5,8 +5,8 @@ import 'package:hnh/domain/entities/sponsor.dart';
 
 void main() {
   group('Entity Test: Sponsor', () {
-    Map<String, String> testSponsorMap;
-    Sponsor testSponsor;
+    late Map<String, String> testSponsorMap;
+    late Sponsor testSponsor;
     setUp(() {
         testSponsor = Sponsor("lorem Ipsum", 'www.lorem-ipsum.com', 'https://lorem-ipsum.com/image', '2019');
         testSponsorMap = {

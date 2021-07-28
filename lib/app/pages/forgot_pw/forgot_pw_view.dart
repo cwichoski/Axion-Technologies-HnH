@@ -15,7 +15,7 @@ class ForgotPwPage extends View {
 }
 
 class _ForgotPwPageView extends ViewState<ForgotPwPage, ForgotPwController> {
-  ForgotPwController _controller;
+  late ForgotPwController _controller;
 
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 

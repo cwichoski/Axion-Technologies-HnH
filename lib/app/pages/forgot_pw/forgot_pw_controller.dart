@@ -4,7 +4,7 @@ import 'package:hnh/app/pages/forgot_pw/forgot_pw_presenter.dart';
 import 'package:hnh/app/utils/constants.dart';
 
 class ForgotPwController extends Controller {
-  TextEditingController email;
+  late TextEditingController email;
   ForgotPwPresenter _forgotPwPresenter;
   bool isLoading = false;
 

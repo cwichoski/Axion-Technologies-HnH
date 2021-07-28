@@ -6,10 +6,10 @@ import 'package:flutter/foundation.dart';
 class RegisterPresenter extends Presenter {
 
   AuthenticationRepository _authenticationRepository;
-  RegisterUserCase _registerUserCase;
+  late RegisterUserCase _registerUserCase;
 
-  Function registerOnComplete;
-  Function registerOnError;
+  late Function registerOnComplete;
+  late Function registerOnError;
 
   RegisterPresenter(this._authenticationRepository) {
     _registerUserCase = RegisterUserCase(_authenticationRepository);

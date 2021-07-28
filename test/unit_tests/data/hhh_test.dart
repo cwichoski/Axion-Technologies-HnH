@@ -6,7 +6,7 @@ import 'package:hnh/domain/entities/hhh.dart';
 
 void main() {
   group('DataHHHRepository', () {
-    DataHHHRepository dataHHHRepository;
+    late DataHHHRepository dataHHHRepository;
 
     setUp(() {
       dataHHHRepository = DataHHHRepository();

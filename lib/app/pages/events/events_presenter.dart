@@ -5,16 +5,16 @@ import 'package:hnh/domain/usecases/get_all_events_usecase.dart';
 import 'package:hnh/domain/entities/event.dart';
 
 class EventsPresenter extends Presenter {
-  Function getUserOnNext;
-  Function getUserOnComplete;
-  Function getUserOnError;
+  late Function getUserOnNext;
+  late Function getUserOnComplete;
+  late Function getUserOnError;
 
-  Function getEventsOnNext;
-  Function getEventsOnComplete;
-  Function getEventsOnError;
+  late Function getEventsOnNext;
+  late Function getEventsOnComplete;
+  late Function getEventsOnError;
 
-  GetCurrentUserUseCase _getCurrentUserUseCase;
-  GetAllEventsUseCase _getAllEventsUseCase;
+  late GetCurrentUserUseCase _getCurrentUserUseCase;
+  late GetAllEventsUseCase _getAllEventsUseCase;
 
   EventsPresenter(authenticationRepository, eventRepository) {
     _getCurrentUserUseCase = GetCurrentUserUseCase(authenticationRepository);

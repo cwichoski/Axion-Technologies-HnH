@@ -12,9 +12,9 @@ import 'dart:async';
 class DataLocalPlacesRepository implements LocalPlacesRepository {
   // singleton
   static final DataLocalPlacesRepository _instance = DataLocalPlacesRepository._internal();
-  Logger _logger;
-  List<LocalPlace> _restaurants;
-  List<LocalPlace> _hotels;
+  late Logger _logger;
+  late List<LocalPlace> _restaurants;
+  late List<LocalPlace> _hotels;
 
   DataLocalPlacesRepository._internal() {
     _logger = Logger('DataLocalPlacesRepository');

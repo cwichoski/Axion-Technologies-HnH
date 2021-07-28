@@ -5,8 +5,8 @@ class InputField extends StatelessWidget {
   final TextEditingController _controller;
   final String _hintText;
   final FocusNode _focusNode;
-  TextInputType _type;
-  bool isPassword;
+  late TextInputType _type;
+  late bool isPassword;
 
   InputField(this._controller, this._hintText, this._focusNode, {bool isPassword = false, TextInputType type = TextInputType.text}) {
     this.isPassword = isPassword;

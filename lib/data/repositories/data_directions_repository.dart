@@ -13,9 +13,9 @@ class DataDirectionsRepository implements DirectionsRepository {
   // singleton
   static final DataDirectionsRepository _instance =
       DataDirectionsRepository._internal();
-  Logger _logger;
-  List<LocalPlace> _restaurants;
-  List<LocalPlace> _hotels;
+  late Logger _logger;
+  late List<LocalPlace> _restaurants;
+  late List<LocalPlace> _hotels;
 
   DataDirectionsRepository._internal() {
     _logger = Logger('DataDirectionsRepository');

@@ -10,8 +10,8 @@ class DataHHHRepository implements HHHRepository {
 
   // singleton
   static final DataHHHRepository _instance = DataHHHRepository._internal();
-  Logger _logger;
-  HHH _currentHHH;
+  late Logger _logger;
+  late HHH _currentHHH;
 
   DataHHHRepository._internal() {
     _logger =Logger('DataHHHRepository');

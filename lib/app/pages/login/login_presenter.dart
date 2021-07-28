@@ -6,11 +6,11 @@ import 'package:flutter/foundation.dart';
 class LoginPresenter extends Presenter {
 
   AuthenticationRepository _authenticationRepository;
-  LoginUseCase _loginUseCase;
+  late LoginUseCase _loginUseCase;
 
   // Controller Callback functions
-  Function loginOnComplete;
-  Function loginOnError;
+  late Function loginOnComplete;
+  late Function loginOnError;
 
   LoginPresenter(this._authenticationRepository) {
     // Initialize the [UseCase] with the appropriate repository

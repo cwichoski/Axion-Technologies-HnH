@@ -5,7 +5,7 @@ import 'package:hnh/domain/entities/local_place.dart';
 
 class LocalPlacesController extends Controller {
   LocalPlacesPresenter _placesPresenter;
-  List<LocalPlace> _places;
+  late List<LocalPlace> _places;
   bool isLoading = false;
   List<LocalPlace> get places => _places;
   List<LocalPlace> get restaurants => _places

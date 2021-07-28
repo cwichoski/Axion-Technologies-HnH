@@ -6,8 +6,8 @@ import 'package:package_info/package_info.dart';
 
 class HHDrawerController extends Controller {
   HHDrawerPresenter _drawerPresenter;
-  late User _currentUser;
-  late PackageInfo _info;
+  User _currentUser = User('', '', '', '');
+  PackageInfo _info = PackageInfo(appName: '', version: '', packageName: '', buildNumber: '');
 
   User get user => _currentUser;
   String get info => '${_info.appName} v${_info.version} ${_info.buildNumber}';

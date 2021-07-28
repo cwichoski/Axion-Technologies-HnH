@@ -13,8 +13,8 @@ class SplashPage extends View {
 
 class SplashPageView extends ViewState<SplashPage, SplashController>
     with SingleTickerProviderStateMixin {
-  AnimationController _animationController;
-  Animation<double> _animation;
+  late AnimationController _animationController;
+  late Animation<double> _animation;
 
   SplashPageView()
       : super(SplashController(

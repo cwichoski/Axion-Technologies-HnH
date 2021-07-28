@@ -2,10 +2,10 @@ import 'package:flutter_clean_architecture/flutter_clean_architecture.dart';
 import 'package:hnh/domain/usecases/auth/get_authentication_status_usecase.dart';
 
 class SplashPresenter extends Presenter {
-  Function getAuthStatusOnNext;
-  Function getAuthStatusOnComplete;
+  late Function getAuthStatusOnNext;
+  late Function getAuthStatusOnComplete;
 
-  GetAuthStatusUseCase _getAuthStatusUseCase;
+  late GetAuthStatusUseCase _getAuthStatusUseCase;
 
   SplashPresenter(authRepo) {
     _getAuthStatusUseCase = GetAuthStatusUseCase(authRepo);

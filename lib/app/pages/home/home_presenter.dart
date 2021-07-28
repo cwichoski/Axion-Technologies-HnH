@@ -4,16 +4,16 @@ import 'package:hnh/domain/usecases/get_hhh_usecase.dart';
 import 'package:hnh/domain/usecases/get_current_user_usecase.dart';
 
 class HomePresenter extends Presenter {
-  Function getUserOnNext;
-  Function getUserOnComplete;
-  Function getUserOnError;
+  late Function getUserOnNext;
+  late Function getUserOnComplete;
+  late Function getUserOnError;
 
-  Function getHHHOnNext;
-  Function getHHHOnComplete;
-  Function getHHHOnError;
+  late Function getHHHOnNext;
+  late Function getHHHOnComplete;
+  late Function getHHHOnError;
 
-  GetHHHUseCase _getHHHUseCase;
-  GetCurrentUserUseCase _getCurrentUserUseCase;
+  late GetHHHUseCase _getHHHUseCase;
+  late GetCurrentUserUseCase _getCurrentUserUseCase;
 
   HomePresenter(hhhRepository, sponsorRepository, authenticationRepository) {
     _getHHHUseCase = GetHHHUseCase(hhhRepository, sponsorRepository);

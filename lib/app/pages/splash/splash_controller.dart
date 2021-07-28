@@ -5,7 +5,7 @@ import 'package:hnh/app/pages/splash/splash_presenter.dart';
 import 'package:hnh/domain/repositories/location_repository.dart';
 
 class SplashController extends Controller {
-  bool isLoading;
+  late bool isLoading;
   SplashPresenter _splashPresenter;
   LocationRepository _locationRepository;
   SplashController(authRepo, this._locationRepository)

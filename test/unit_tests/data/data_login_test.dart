@@ -7,7 +7,7 @@ import 'package:hnh/data/exceptions/authentication_exception.dart';
 
 void main() {
   group('DataAuthenticationRepository', () {
-    DataAuthenticationRepository dataAuthenticationRepository;
+    late DataAuthenticationRepository dataAuthenticationRepository;
 
     setUp(() {
       dataAuthenticationRepository = DataAuthenticationRepository();

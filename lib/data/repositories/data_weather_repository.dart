@@ -14,7 +14,7 @@ import 'dart:async';
 class DataWeatherRepository implements WeatherRepository {
   // singleton
   static final DataWeatherRepository _instance = DataWeatherRepository._internal();
-  Logger _logger;
+  late Logger _logger;
 
 
   DataWeatherRepository._internal() {

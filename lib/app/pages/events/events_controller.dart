@@ -8,13 +8,13 @@ import 'package:logging/logging.dart';
 
 class EventsController extends Controller {
   EventsPresenter _eventsPresenter;
-  List<Event> _featuredEvents;
-  List<Event> _upcomingEvents;
-  User _currentUser;
-  Logger logger;
+  late List<Event> _featuredEvents;
+  late List<Event> _upcomingEvents;
+  late User _currentUser;
+  late Logger logger;
   bool isLoading = false;
-  bool userRetrieved;
-  bool eventsRetrieved;
+  late bool userRetrieved;
+  late bool eventsRetrieved;
 
   User get currentUser => _currentUser;
   List<Event> get featuredEvents => _featuredEvents;

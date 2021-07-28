@@ -9,7 +9,7 @@ import 'package:logging/logging.dart';
 class LogoutUseCase extends CompletableUseCase<void> {
   // Members
   AuthenticationRepository _authenticationRepository;
-  Logger _logger;
+  late Logger _logger;
 
   // Constructors
   LogoutUseCase(this._authenticationRepository) {

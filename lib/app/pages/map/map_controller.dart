@@ -11,18 +11,18 @@ import 'package:hnh/domain/entities/location.dart';
 import 'package:hnh/domain/entities/weather.dart';
 
 class MapController extends Controller {
-  GoogleMapController _googleMapController;
+  late GoogleMapController _googleMapController;
   MapPresenter _mapPresenter;
-  Location _initialPosition;
-  Location _currentLocation;
-  Weather _currentWeather;
-  double _totalDistance;
-  double _remainingDistance;
-  bool _isInitialSet;
-  bool isNavigating;
-  Set<Polyline> polylines;
-  Set<Marker> markers;
-  RaceTracker _event;
+  late Location _initialPosition;
+  late Location _currentLocation;
+  late Weather _currentWeather;
+  late double _totalDistance;
+  late double _remainingDistance;
+  late bool _isInitialSet;
+  late bool isNavigating;
+  late Set<Polyline> polylines;
+  late Set<Marker> markers;
+  late RaceTracker _event;
 
   LatLng get initial =>
       LatLng(_initialPosition.numLat, _initialPosition.numLon);

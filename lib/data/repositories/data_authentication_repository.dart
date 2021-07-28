@@ -17,7 +17,7 @@ class DataAuthenticationRepository implements AuthenticationRepository {
   /// Singleton object of `DataAuthenticationRepository`
   static DataAuthenticationRepository _instance =
       DataAuthenticationRepository._internal();
-  Logger _logger;
+  late Logger _logger;
 
   // Constructors
   DataAuthenticationRepository._internal() {

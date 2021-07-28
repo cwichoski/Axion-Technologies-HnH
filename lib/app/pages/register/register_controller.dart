@@ -4,13 +4,13 @@ import 'package:hnh/app/utils/constants.dart';
 import 'package:flutter/material.dart';
 
 class RegisterController extends Controller {
-  TextEditingController firstName;
-  TextEditingController lastName;
-  TextEditingController email;
-  TextEditingController password;
-  TextEditingController confirmedPassword;
+  late TextEditingController firstName;
+  late TextEditingController lastName;
+  late TextEditingController email;
+  late TextEditingController password;
+  late TextEditingController confirmedPassword;
 
-  bool agreedToTOS;
+  late bool agreedToTOS;
   RegisterPresenter _registerPresenter;
 
   RegisterController(authRepo)

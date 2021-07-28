@@ -10,12 +10,12 @@ import 'package:hnh/data/exceptions/authentication_exception.dart';
 
 void main() {
   group('DataEventsRepository', () {
-    DataEventRepository dataEventRepository;
-    EventRegistration eventRegistration;
-    EventRegistration duplicate;
-    EventRegistration sameUserDifferentEvent;
-    EventRegistration differentUserSameEvent;
-    EventRegistration realUserRealEvent;
+    late DataEventRepository dataEventRepository;
+    late EventRegistration eventRegistration;
+    late EventRegistration duplicate;
+    late EventRegistration sameUserDifferentEvent;
+    late EventRegistration differentUserSameEvent;
+    late EventRegistration realUserRealEvent;
     setUp(() {
       dataEventRepository = DataEventRepository();
       eventRegistration = EventRegistration(Utils.uuidRandom(), Utils.uuidRandom());

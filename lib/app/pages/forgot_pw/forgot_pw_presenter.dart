@@ -3,9 +3,9 @@ import 'package:flutter/foundation.dart';
 import 'package:hnh/domain/usecases/forgot_password_usecase.dart';
 class ForgotPwPresenter extends Presenter {
 
-  Function forgotOnComplete;
-  Function forgotOnError;
-  ForgotPasswordUseCase _forgotPasswordUseCase;
+  late Function forgotOnComplete;
+  late Function forgotOnError;
+  late ForgotPasswordUseCase _forgotPasswordUseCase;
 
   ForgotPwPresenter(authRepo) {
     _forgotPasswordUseCase = ForgotPasswordUseCase(authRepo);

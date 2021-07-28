@@ -14,7 +14,7 @@ class LocationTrackUseCase extends UseCase<LocationTrackResponse, void> {
   final LocationRepository _locationRepository;
   final WeatherRepository _weatherRepository;
   DateTime _lastRetrievalTime;
-  Coordinates lastKnownLocation;
+  late Coordinates lastKnownLocation;
   bool _initialRetrieval;
 
   LocationTrackUseCase(this._locationRepository, this._weatherRepository)

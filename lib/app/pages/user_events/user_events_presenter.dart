@@ -5,11 +5,11 @@ import 'package:meta/meta.dart';
 
 class UserEventsPresenter extends Presenter {
 
-  Function getUserEventsOnNext;
-  Function getUserEventsOnComplete;
-  Function getUserEventsOnError;
+  late Function getUserEventsOnNext;
+  late Function getUserEventsOnComplete;
+  late Function getUserEventsOnError;
 
-  GetUserEventsUseCase _getUserEventsUseCase;
+  late GetUserEventsUseCase _getUserEventsUseCase;
 
   UserEventsPresenter(eventRepo) {
     _getUserEventsUseCase = GetUserEventsUseCase(eventRepo);

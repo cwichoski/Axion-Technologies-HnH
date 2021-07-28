@@ -9,10 +9,10 @@ import 'package:hnh/domain/entities/user.dart';
 
 void main() {
   group('Entity Test: EventRegistration', () {
-    Map<String, dynamic> eventRegistrationMap;
-    EventRegistration testEventRegistration;
-    Event testEvent;
-    User testUser;
+    late Map<String, dynamic> eventRegistrationMap;
+    late EventRegistration testEventRegistration;
+    late Event testEvent;
+    late User testUser;
     setUp(() {
       var event = {
         'name': 'Event Lorem Ipsum',

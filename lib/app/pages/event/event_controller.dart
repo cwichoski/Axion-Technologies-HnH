@@ -10,9 +10,9 @@ class EventController extends Controller {
   Event _event;
   User _user;
   bool isLoading = false;
-  bool _isRegistered;
+  late bool _isRegistered;
   final bool _isUserEvent;
-  bool finishedLoading; // flag to display map
+  late bool finishedLoading; // flag to display map
   bool get isRegistered => _isRegistered;
 
   Event get event => _event;

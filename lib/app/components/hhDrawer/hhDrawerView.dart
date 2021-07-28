@@ -14,8 +14,9 @@ class HhDrawer extends View {
 class _HhDrawerView extends ViewState<HhDrawer, HHDrawerController> {
   _HhDrawerView(HHDrawerController controller) : super(controller);
 
+
   @override
-  Widget buildPage() {
+  Widget get view {
     return Stack(key: globalKey, children: [
       Column(
         children: <Widget>[
@@ -90,6 +91,8 @@ class _HhDrawerView extends ViewState<HhDrawer, HHDrawerController> {
         ),
       );
 
+  get controller => this.;
+
   ListTile createPageTile(String name, IconData icon, [handler]) {
     return ListTile(
       title: Text(
@@ -103,4 +106,5 @@ class _HhDrawerView extends ViewState<HhDrawer, HHDrawerController> {
       onTap: handler,
     );
   }
+
 }

@@ -12,8 +12,8 @@ import 'package:logging/logging.dart';
 
 void main() {
   group('LocationTrackUseCase', () {
-    GetHHHUseCase _getHHHUseCase;
-    _Observer observer;
+    late GetHHHUseCase _getHHHUseCase;
+    late _Observer observer;
 
     setUp(() {
       _getHHHUseCase = GetHHHUseCase(MockHHHRepo(), MockSponsorRepo());

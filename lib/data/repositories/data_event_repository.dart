@@ -14,7 +14,7 @@ class DataEventRepository implements EventRepository {
 
   /// Singleton object of `DataEventRepository`
   static DataEventRepository _instance = DataEventRepository._internal();
-  Logger _logger;
+  late Logger _logger;
 
   // Constructors
   DataEventRepository._internal() {

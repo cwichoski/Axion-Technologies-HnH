@@ -6,9 +6,9 @@ import 'package:hnh/app/utils/constants.dart';
 
 class LoginController extends Controller {
   // Text Field controllers
-  TextEditingController emailTextController;
-  TextEditingController passwordTextController;
-  bool isLoading;
+  late TextEditingController emailTextController;
+  late TextEditingController passwordTextController;
+  late bool isLoading;
   LoginPresenter _loginPresenter;
   // DataUserRepository _dataUserRepository;
 

@@ -7,8 +7,8 @@ import 'package:hnh/domain/entities/location.dart';
 
 void main() {
   group('Entity Test: Event', () {
-    Map<String, dynamic> eventMap;
-    Event testEvent;
+    late Map<String, dynamic> eventMap;
+    late Event testEvent;
 
     setUp(() {
       eventMap = {

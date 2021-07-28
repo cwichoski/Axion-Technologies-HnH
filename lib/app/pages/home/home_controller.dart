@@ -7,15 +7,15 @@ import 'package:logging/logging.dart';
 
 class HomeController extends Controller {
   HomePresenter _homePresenter;
-  User _currentUser;
-  HHH _currentHHH;
+  late User _currentUser;
+  late HHH _currentHHH;
 
   DateTime get eventTime => _currentHHH?.eventTime;
   User get currentUser => _currentUser;
-  Logger logger;
-  bool userRetrieved;
-  bool hhhRetrieved;
-  bool isLoading;
+  late Logger logger;
+  late bool userRetrieved;
+  late bool hhhRetrieved;
+  late bool isLoading;
 
   HomeController(hhhRepository, sponsorRepository, authRepository)
       : _homePresenter =

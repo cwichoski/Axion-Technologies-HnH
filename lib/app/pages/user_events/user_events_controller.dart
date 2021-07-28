@@ -7,7 +7,7 @@ import 'package:hnh/domain/entities/user.dart';
 
 class UserEventsController extends Controller {
   UserEventsPresenter _eventsPresenter;
-  List<Event> _events;
+  late List<Event> _events;
   User _currentUser;
   bool isLoading = false;
 

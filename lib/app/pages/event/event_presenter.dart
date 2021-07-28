@@ -6,21 +6,21 @@ import 'package:hnh/domain/usecases/unregister_event_usecase.dart';
 import 'package:meta/meta.dart';
 
 class EventPresenter extends Presenter {
-  Function registerOnComplete;
-  Function registerOnError;
+  late Function registerOnComplete;
+  late Function registerOnError;
 
-  Function unRegisterOnComplete;
-  Function unRegisterOnError;
+  late Function unRegisterOnComplete;
+  late Function unRegisterOnError;
 
-  Function isRegisteredOnNext;
-  Function isRegisteredOnComplete;
-  Function isRegisteredOnError;
+  late Function isRegisteredOnNext;
+  late Function isRegisteredOnComplete;
+  late Function isRegisteredOnError;
 
-  RegisterEventUseCase _registerEventUseCase;
-  GetUserEventsUseCase _getUserEventsUseCase;
-  UnRegisterEventUseCase _unRegisterEventUseCase;
+  late RegisterEventUseCase _registerEventUseCase;
+  late GetUserEventsUseCase _getUserEventsUseCase;
+  late UnRegisterEventUseCase _unRegisterEventUseCase;
 
-  String _eventId;
+  late String _eventId;
 
   EventPresenter(eventRepo) {
     _registerEventUseCase = RegisterEventUseCase(eventRepo);

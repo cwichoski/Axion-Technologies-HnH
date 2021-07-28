@@ -2,11 +2,11 @@ import 'package:flutter_clean_architecture/flutter_clean_architecture.dart';
 import 'package:hnh/domain/usecases/location_track_usecase.dart';
 
 class MapPresenter extends Presenter {
-  Function locationOnNext;
-  Function locationOnComplete;
-  Function locationOnError;
+  late Function locationOnNext;
+  late Function locationOnComplete;
+  late Function locationOnError;
 
-  LocationTrackUseCase _locationTrackUseCase;
+  late LocationTrackUseCase _locationTrackUseCase;
 
   MapPresenter(locationRepository, weatherRepository) {
     _locationTrackUseCase = LocationTrackUseCase(locationRepository, weatherRepository);
